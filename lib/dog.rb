@@ -9,6 +9,10 @@ class Dog
     save
   end
 
+  def self.all
+    @@all
+  end
+
   def save
     @@all << self
   end
@@ -18,13 +22,10 @@ class Dog
   end
 
   def self.print_all
-    @@all.each do |dog|
-      puts dog.name
-    end
-  end
-
-  def self.all
-    @@all
+    puts @@all.map{|dog| dog.name}
+    # @@all.each do |dog|
+    #   puts dog.name
+    # end
   end
 
 end
